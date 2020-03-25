@@ -1,16 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Train Schedule</title>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="container">
+        <div class="jumbotron bg-dark">
+            <h1 class="text-center">Train Kept-A-Rollin'</h1>
+            <h2 class="text-center">All Night Long</h2>
+          </div>
+    </div>
     
+    
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+              Current Train Schedule
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Frequency (min)</th>
+                        <th scope="col">Next Arrival</th>
+                        <th scope="col">Minutes Away</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td scope="row">Trenton Express</td>
+                        <td>Trenton</td>
+                        <td>25</td>
+                        <td>5:35 PM</td>
+                        <td>10</td>
+                      </tr>
+                      <tr>
+                        <td scope="row">Oregon Trail</td>
+                        <td>Salem, Oregon</td>
+                        <td>3600</td>
+                        <td>1:39 PM</td>
+                        <td>1154</td>
+                      </tr>
+                    </tbody>
+                  </table>    
+            </div>
+          </div>
+    </div>
 
-    <script type="text/javascript" src="app.js"></script>
-</body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+              Add Train
+            </div>
+            <div class="card-body">
+                <form role="form">
+                    <div class="form-group row">
+                      <label for="name-input">Train Name</label>
+                      <input class="form-control" id="name-input" type="text">
+                    </div>
+                    <div class="form-group row">
+                      <label for="destination-input">Destination</label>
+                      <input class="form-control" id="destination-input" type="text">
+                    </div>
+                    <div class="form-group row">
+                      <label for="train-time-input">First Train Time</label>
+                      <input class="form-control" id="train-time-input" type="time">
+                    </div>
+                    <div class="form-group row">
+                        <label for="frequency-input">Frequency (min)</label>
+                        <input class="form-control" id="frequency-input" type="number">
+                    </div>
+                    <button class="btn btn-default bg-dark" id="add-user" type="submit">Submit</button>
+                  </form>
+            </div>
+          </div>
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-database.js"></script>
+
+    <script type="text/javascript" src="js/app.js" async></script>
+  </body>
 </html>
