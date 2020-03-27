@@ -16,6 +16,9 @@
   var database = firebase.database();
 
   var name, dest, time, freq;
+  var arrival = "";
+  var minAway = 0;
+
 
       $("#submit-train").on("click", function(event) {
         event.preventDefault();
@@ -50,15 +53,9 @@ database.ref().on("child_added", function(snapshot) {
     console.log(sv.time);
     console.log(sv.frequency);
 
+    
 
-    var addName = $(`<td scope="row">${name}</td>`);
-    var addDest = $(`<td>${dest}</td>`);
-    var addTime = $(`<td>${time}</td>`);
-    var addFreq = $(`<td>${freq}</td>`);
-
-    var tRow = $("tbody").append(`<tr></tr>`);
-    $(tRow).append(addName, addDest, addTime, addFreq);
-
+    $("tbody").append(`<tr><td scope="row">${name}</td><td>${sv.destination}</td><td>${sv.frequency}</td><td>${arrival}</td><td>${minAway}</td></tr>`);
 
 
     // Handle the errors
